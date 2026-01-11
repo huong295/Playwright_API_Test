@@ -27,7 +27,7 @@ export default defineConfig({
  
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */
-  baseURL: 'https://jsonplaceholder.typicode.com',
+  baseURL: 'https://api.thedogapi.com', 
      extraHTTPHeaders: {
       'Accept': 'application/json',
     },
@@ -45,4 +45,5 @@ export default defineConfig({
       testMatch: /.*\.spec\.ts/,
     },
   ],
+
 });

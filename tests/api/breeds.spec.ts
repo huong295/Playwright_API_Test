@@ -1,32 +1,30 @@
+
 import { test, expect } from '@playwright/test';
 
-test.describe('Dog API Tests', () => {
+test.describe('US1: Retrieve All Breeds', () => {
   
-  test('GET request - retrieve all breeds with limit and page', async ({ request }) => {
-    const response = await request.get('/v1/breeds?limit=10&page=0');
+  test('Happy Path: Should return list of breeds', async ({ request }) => {
+    const resp = await request.get('/breeds');
     
-    expect(response.status()).toBe(200);
-    expect(response.ok()).toBeTruthy();
+    expect(resp.status()).toBe(200);
     
-    const responseBody = await response.json();
-    expect(Array.isArray(responseBody)).toBeTruthy();
-    expect(responseBody.length).toBeLessThanOrEqual(10);
+    const body = await resp.json();
+    expect(Array.isArray(body)).toBeTruthy();
+    expect(body.length).toBeGreaterThan(0);
     
-    // Verify breed properties
-    if (responseBody.length > 0) {
-      expect(responseBody[0]).toHaveProperty('id');
-      expect(responseBody[0]).toHaveProperty('name');
-    }
+    const first = body[0];
+    expect(first).toHaveProperty('id');
+    expect(first).toHaveProperty('name');
+    expect(typeof first.id).toBe('number');
+    expect(typeof first.name).toBe('string');
   });
 
-  test('GET request - retrieve all breeds without query params', async ({ request }) => {
-    const response = await request.get('/v1/breeds');
+  test('Negative: Should handle negative limit', async ({ request }) => {
+    const resp = await request.get('/breeds', {
+      params: { limit: -10 }
+    });
     
-    expect(response.status()).toBe(200);
-    const responseBody = await response.json();
-    expect(Array.isArray(responseBody)).toBeTruthy();
-    expect(responseBody.length).toBeGreaterThan(0);
+    expect(resp.status()).toBe(200);
   });
+
 });
-
-// ...existing code...
