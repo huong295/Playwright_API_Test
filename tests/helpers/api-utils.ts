@@ -5,7 +5,7 @@ export class DogApiHelper {
   constructor(private request: APIRequestContext) {}
 
   async getFirstBreedId(): Promise<number> {
-    const resp = await this.request.get('/breeds', { params: { limit: 1 } });
+    const resp = await this.request.get('https://api.thedogapi.com/v1/breeds?limit=10&page=0', { params: { limit: 1 } });
     const data = await resp.json();
     return data[0]?.id;
   }

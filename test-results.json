@@ -1,0 +1,259 @@
+{
+  "config": {
+    "configFile": "D:\\AUTO_TEST\\Playwright_Test\\Playwright_API_Test\\playwright.config.ts",
+    "rootDir": "D:/AUTO_TEST/Playwright_Test/Playwright_API_Test/tests",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 3
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "html",
+        null
+      ],
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "D:/AUTO_TEST/Playwright_Test/Playwright_API_Test/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 3
+        },
+        "id": "API Tests",
+        "name": "API Tests",
+        "testDir": "D:/AUTO_TEST/Playwright_Test/Playwright_API_Test/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "/.*\\.spec\\.ts/"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.57.0",
+    "workers": 4,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "api\\breed-details.spec.ts",
+      "file": "api/breed-details.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "US2: Retrieve Specific Breed Information",
+          "file": "api/breed-details.spec.ts",
+          "line": 4,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Happy Path: Should retrieve breed by valid ID",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "API Tests",
+                  "projectName": "API Tests",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 258,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m404\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m404\u001b[39m\n    at D:\\AUTO_TEST\\Playwright_Test\\Playwright_API_Test\\tests\\api\\breed-details.spec.ts:16:27",
+                        "location": {
+                          "file": "D:\\AUTO_TEST\\Playwright_Test\\Playwright_API_Test\\tests\\api\\breed-details.spec.ts",
+                          "column": 27,
+                          "line": 16
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 14 |\u001b[39m     \u001b[36mconst\u001b[39m resp \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m request\u001b[33m.\u001b[39m\u001b[36mget\u001b[39m(\u001b[32m`/breeds/${testBreedId}`\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 15 |\u001b[39m     \n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 16 |\u001b[39m     expect(resp\u001b[33m.\u001b[39mstatus())\u001b[33m.\u001b[39mtoBe(\u001b[35m200\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 17 |\u001b[39m     \n \u001b[90m 18 |\u001b[39m     \u001b[36mconst\u001b[39m breed \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m resp\u001b[33m.\u001b[39mjson()\u001b[33m;\u001b[39m\n \u001b[90m 19 |\u001b[39m     expect(breed\u001b[33m.\u001b[39mid)\u001b[33m.\u001b[39mtoBe(testBreedId)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\AUTO_TEST\\Playwright_Test\\Playwright_API_Test\\tests\\api\\breed-details.spec.ts",
+                            "column": 27,
+                            "line": 16
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m404\u001b[39m\n\n\u001b[0m \u001b[90m 14 |\u001b[39m     \u001b[36mconst\u001b[39m resp \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m request\u001b[33m.\u001b[39m\u001b[36mget\u001b[39m(\u001b[32m`/breeds/${testBreedId}`\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 15 |\u001b[39m     \n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 16 |\u001b[39m     expect(resp\u001b[33m.\u001b[39mstatus())\u001b[33m.\u001b[39mtoBe(\u001b[35m200\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 17 |\u001b[39m     \n \u001b[90m 18 |\u001b[39m     \u001b[36mconst\u001b[39m breed \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m resp\u001b[33m.\u001b[39mjson()\u001b[33m;\u001b[39m\n \u001b[90m 19 |\u001b[39m     expect(breed\u001b[33m.\u001b[39mid)\u001b[33m.\u001b[39mtoBe(testBreedId)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at D:\\AUTO_TEST\\Playwright_Test\\Playwright_API_Test\\tests\\api\\breed-details.spec.ts:16:27\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-11T16:17:01.258Z",
+                      "annotations": [],
+                      "attachments": [],
+                      "errorLocation": {
+                        "file": "D:\\AUTO_TEST\\Playwright_Test\\Playwright_API_Test\\tests\\api\\breed-details.spec.ts",
+                        "column": 27,
+                        "line": 16
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "714b5116b90d63450512-5d7342c5f48ca0a32808",
+              "file": "api/breed-details.spec.ts",
+              "line": 13,
+              "column": 7
+            },
+            {
+              "title": "Negative: Should return 404 for non-existent breed",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "API Tests",
+                  "projectName": "API Tests",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 269,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-11T16:17:01.257Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "714b5116b90d63450512-2fa66858feafb2848dbc",
+              "file": "api/breed-details.spec.ts",
+              "line": 24,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "api\\breeds.spec.ts",
+      "file": "api/breeds.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "US1: Retrieve All Breeds",
+          "file": "api/breeds.spec.ts",
+          "line": 4,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Happy Path: Should return list of breeds",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "API Tests",
+                  "projectName": "API Tests",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "failed",
+                      "duration": 673,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m404\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m404\u001b[39m\n    at D:\\AUTO_TEST\\Playwright_Test\\Playwright_API_Test\\tests\\api\\breeds.spec.ts:9:27",
+                        "location": {
+                          "file": "D:\\AUTO_TEST\\Playwright_Test\\Playwright_API_Test\\tests\\api\\breeds.spec.ts",
+                          "column": 27,
+                          "line": 9
+                        },
+                        "snippet": "\u001b[0m \u001b[90m  7 |\u001b[39m     \u001b[36mconst\u001b[39m resp \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m request\u001b[33m.\u001b[39m\u001b[36mget\u001b[39m(\u001b[32m'/breeds?limit=10&page=0'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m  8 |\u001b[39m     \n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  9 |\u001b[39m     expect(resp\u001b[33m.\u001b[39mstatus())\u001b[33m.\u001b[39mtoBe(\u001b[35m200\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 10 |\u001b[39m     \n \u001b[90m 11 |\u001b[39m     \u001b[36mconst\u001b[39m body \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m resp\u001b[33m.\u001b[39mjson()\u001b[33m;\u001b[39m\n \u001b[90m 12 |\u001b[39m     expect(\u001b[33mArray\u001b[39m\u001b[33m.\u001b[39misArray(body))\u001b[33m.\u001b[39mtoBeTruthy()\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\AUTO_TEST\\Playwright_Test\\Playwright_API_Test\\tests\\api\\breeds.spec.ts",
+                            "column": 27,
+                            "line": 9
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m404\u001b[39m\n\n\u001b[0m \u001b[90m  7 |\u001b[39m     \u001b[36mconst\u001b[39m resp \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m request\u001b[33m.\u001b[39m\u001b[36mget\u001b[39m(\u001b[32m'/breeds?limit=10&page=0'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m  8 |\u001b[39m     \n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  9 |\u001b[39m     expect(resp\u001b[33m.\u001b[39mstatus())\u001b[33m.\u001b[39mtoBe(\u001b[35m200\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 10 |\u001b[39m     \n \u001b[90m 11 |\u001b[39m     \u001b[36mconst\u001b[39m body \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m resp\u001b[33m.\u001b[39mjson()\u001b[33m;\u001b[39m\n \u001b[90m 12 |\u001b[39m     expect(\u001b[33mArray\u001b[39m\u001b[33m.\u001b[39misArray(body))\u001b[33m.\u001b[39mtoBeTruthy()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at D:\\AUTO_TEST\\Playwright_Test\\Playwright_API_Test\\tests\\api\\breeds.spec.ts:9:27\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-11T16:17:01.273Z",
+                      "annotations": [],
+                      "attachments": [],
+                      "errorLocation": {
+                        "file": "D:\\AUTO_TEST\\Playwright_Test\\Playwright_API_Test\\tests\\api\\breeds.spec.ts",
+                        "column": 27,
+                        "line": 9
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "325e0a4e8b8c6ec51e85-f7cdf26529e0a8991100",
+              "file": "api/breeds.spec.ts",
+              "line": 6,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-01-11T16:17:00.458Z",
+    "duration": 1858.033,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 2,
+    "flaky": 0
+  }
+}
