@@ -1,5 +1,3 @@
-**TEST_PLAN.md**
-markdown
 # Test Strategy - Dog API
 
 ## Scope
